@@ -4,6 +4,6 @@ node {
     git poll: true, url: 'https://github.com/spring-projects/spring-petclinic.git'
     }
     stage('Build'){
-    sh 'mvn install'
+    bat 'mvn install'
     }    
 }
