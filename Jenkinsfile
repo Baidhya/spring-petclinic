@@ -8,7 +8,7 @@ node {
     bat 'mvn install'
     }
     stage('Sonar analysis'){
-     bat 'mvn sonar:sonar -Dsonar.organization=baidhya-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8a95571235aae6b422332de51ecd79317afadaef'
+     bat 'mvn sonar:sonar -Dsonar.organization=baidhya-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.forceAuthentication=false -Dsonar.login=8a95571235aae6b422332de51ecd79317afadaef'
     }
     
 }
