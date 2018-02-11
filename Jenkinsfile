@@ -12,6 +12,6 @@ node {
     def scannerHome = tool 'Sonar_Cloud';
     withSonarQubeEnv('My SonarQube Server') {
       bat "${scannerHome}/bin/sonar-scanner"
-    }  
-    
+    }    
+}
 }
