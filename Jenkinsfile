@@ -7,8 +7,11 @@ node {
     stage('Build'){
     bat 'mvn install'
     }
-    stage('Sonar analysis'){
-     bat 'mvn sonar:sonar -Dsonar.organization=baidhya-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.forceAuthentication=false -Dsonar.login=8a95571235aae6b422332de51ecd79317afadaef'
-    }
+    stage('SonarQube analysis') {
+    // requires SonarQube Scanner 2.8+
+    def scannerHome = tool 'Sonar_Cloud';
+    withSonarQubeEnv('My SonarQube Server') {
+      bat "${scannerHome}/bin/sonar-scanner"
+    }  
     
 }
