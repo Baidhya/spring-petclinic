@@ -4,7 +4,7 @@ node {
     git poll: true, url: 'https://github.com/spring-projects/spring-petclinic.git'
     }
     stage('Build'){
-    bat '''SET JAVA_HOME=\'C:\\Program Files\\Java\\jdk1.8.0_144\'
-mvn install'''
+    env.JAVA_HOME = tool 'Java_8'
+    bat 'mvn install'
     }    
 }
