@@ -10,7 +10,7 @@ node {
     stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'Sonar_Cloud';
-    withSonarQubeEnv('My SonarQube Server') {
+    withSonarQubeEnv('Sonar_Cloud') {
       bat "${scannerHome}/bin/sonar-scanner"
     }    
 }
